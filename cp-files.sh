@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp -R cofig/* $HOME/.config
+cp -R config/* $HOME/.config
 mkdir -p $HOME/Pictures/Wallpapers
 cp -R walls $HOME/Pictures/Wallpapers
 cp -R fonts $HOME/.local/share
