@@ -1,4 +1,3 @@
-# rox_config
 Guide to configure a Lenovo Yoga Slim 7 as mine
 
 > OS: Arch Linux  
@@ -6,7 +5,7 @@ Guide to configure a Lenovo Yoga Slim 7 as mine
 > Bar: waybar  
 > Terminal: kitty  
 
-## Guide
+# Guide
 
 ### Install
 
@@ -35,6 +34,12 @@ Install pkg and cp configs
 ./pip-add.sh
 ```
 Open nvim and type `:PlugInstall`
+
+Make some binaries does not require password on order to work
+```
+sudo visudo
+```
+append `leo ALL=(ALL) NOPASSWD: /bin/reboot, /bin/poweroff, /sbin/nmcli, /sbin/pacman` to the end of the file, press `:x` to save and exit
 
 Enjoy!
 
