@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pip install pynvim
+pip install pynvim qobuz-dl
