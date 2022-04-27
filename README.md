@@ -2,8 +2,11 @@
 Guide to configure a Lenovo Yoga Slim 7 as mine
 
 > OS: Arch Linux
+> 
 > WM: sway
+> 
 > Bar: waybar
+> 
 > Terminal: kitty
 
 ## Guide
