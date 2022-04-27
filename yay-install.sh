@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
- pushd Sources
+ pushd $HOME/Git
  git clone https://aur.archlinux.org/yay.git
  pushd yay
  makepkg -si
