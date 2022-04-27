@@ -34,7 +34,7 @@ Install pkg and cp configs
 ./yay-add.sh
 ./pip-add.sh
 ```
-Open nvim and type :PlugInstall
+Open nvim and type `:PlugInstall`
 
 Enjoy!
 
