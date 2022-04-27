@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+question=$(echo " logout|勒  reboot|⏻ shutdown" | rofi -sep "|" \
+    -dmenu -i -p 'System' -no-fixed-num-lines -color-enabled)
+
+case $question in
+    *logout)
+        swaymsg exit
+        ;;
+    *reboot)
+        reboot
+        ;;
+    *shutdown)
+        poweroff
+        ;;
+    *)
+        exit 0  # do nothing on wrong response
+        ;;
+esac
+

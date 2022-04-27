@@ -1,0 +1,85 @@
+window {
+  /*width:            30%;
+height:           25%;*/
+  padding:          1;
+  text-color:       #bd93f9;
+  background-color: #c48fcd;
+}
+
+prompt {
+  padding:          4;
+  text-color:       #f8f8f2;
+  background-color: #282c34;
+}
+
+entry {
+  padding:          4;
+  text-color:       #8be9fd;
+  background-color: #282c34;
+}
+
+inputbar {
+children: 		  [ prompt, entry ];
+padding:          10;
+border:           0 0 1;
+text-color:       #c1c1c1;
+background-color: #282c34;
+border-color:     #282c34;
+}
+
+listview {
+  columns:          2;
+  padding:          4;
+  cycle:            false;
+  dynamic:          true;
+  layout:           vertical;
+  background-color: #282c34;
+}
+
+mainbox {
+children:         [ inputbar, listview ];
+background-color: #282c34;
+}
+
+element {
+  padding:          4;
+  text-color:       #A3DE8C;
+  background-color: #282c34;
+}
+
+element-icon {
+  padding:          0 4 0;
+  text-color:       inherit;
+  background-color: #282c34;
+}
+
+element-text {
+  text-color:       inherit;
+  background-color: inherit;
+}
+
+element normal.urgent, element alternate.urgent {
+  text-color:       #c1c1c1;
+  background-color: #282c34;
+}
+
+element normal.active, element alternate.active {
+  text-color:       #c1c1c1;
+  background-color: #282c34;
+}
+
+element selected {
+  text-color:       #282c34;
+  background-color: #c48fcd;
+}
+
+element selected.urgent {
+  text-color:       #212121;
+  background-color: #282c34;
+}
+
+element selected.active {
+  text-color:       #c1c1c1;
+  background-color: #282c34;
+}
+// vim:ft=css

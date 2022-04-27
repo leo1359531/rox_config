@@ -1,0 +1,8 @@
+font=Comic Code 11
+background-color=#282c34e6
+text-color=#eceff4
+border-color=#c48fcd
+default-timeout=3000
+
+[urgency=high]
+text-color=#CB4B16

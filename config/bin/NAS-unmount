@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [[ -f /mnt/NAS/connected ]]
+then 
+    sudo umount /mnt/NAS
+else
+    notify-send "NAS" "Disks already unmounted"
+fi
+
+i=0
+
+while [[ $i -lt 10 ]]
+do
+    if [[ -f /mnt/NAS/connected ]]
+    then
+        i=$(( "$i" + 1 ))
+        sleep 1
+    else
+        notify-send "NAS" "Disk unmounted"
+        exit
+    fi
+done
+
+notify-send "NAS" "Error! Disk not unmounted"

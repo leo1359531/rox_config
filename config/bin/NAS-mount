@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [[ -f /mnt/NAS/connected ]]
+then 
+    notify-send "NAS" "Disk already mounted"
+else
+    sudo mount -t cifs //192.168.1.5/NAS -o user=leo,pass=mary,uid=leo,gid=users /mnt/NAS
+fi
+
+
+i=0
+
+while [[ $i -lt 10 ]]
+do
+    if [[ -f /mnt/NAS/connected ]]
+    then
+        notify-send "NAS" "Disk mounted"
+        exit
+    else
+        i=$(( i + 1 ))
+        sleep 1
+    fi
+done
+
+notify-send "NAS" "Error! Disk not mounted"

@@ -1,0 +1,9 @@
+# !/bin/bash
+
+wall_best="/home/leo/Pictures/Wallpapers/lap.jpg"
+wall_safe="/home/leo/Pictures/Wallpapers/zibaldone/1476143569879.jpg"
+
+killall swaybg
+sleep 0.1
+
+swaybg -m fill -i $wall_best
