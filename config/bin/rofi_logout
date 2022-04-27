@@ -8,10 +8,10 @@ case $question in
         swaymsg exit
         ;;
     *reboot)
-        reboot
+        sudo reboot
         ;;
     *shutdown)
-        poweroff
+        sudo poweroff
         ;;
     *)
         exit 0  # do nothing on wrong response
