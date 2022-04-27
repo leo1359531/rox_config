@@ -7,3 +7,4 @@ cp -R fonts $HOME/.local/share
 chmod +x $HOME/.config/bin/*
 mkdir -p $HOME/Stuffs
 mkdir -p $HOME/Git
+chsh
