@@ -41,5 +41,15 @@ sudo visudo
 ```
 append `leo ALL=(ALL) NOPASSWD: /bin/reboot, /bin/poweroff, /sbin/nmcli, /sbin/pacman, /sbin/mount, /sbin/umount` to the end of the file, press `:x` to save and exit
 
+Enable systemd-resolved for wg
+```
+sudo systemctl enable systemd-resolved.service
+```
+
+reboot
+```
+reboot
+```
+
 Enjoy!
 
