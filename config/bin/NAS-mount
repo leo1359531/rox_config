@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ -f /mnt/NAS/connected ]]
+if [[ -f /mnt/NAS/.connected ]]
 then 
     notify-send "NAS" "Disk already mounted"
+    exit 0
 else
-    sudo mount -t cifs //192.168.1.5/NAS -o user=leo,pass=mary,uid=leo,gid=users /mnt/NAS
+    sudo mount -t cifs //192.168.1.5/NAS -o user=leo,pass=mary,uid=leo,gid=users /mnt/NAS/
 fi
 
 
@@ -12,7 +13,7 @@ i=0
 
 while [[ $i -lt 10 ]]
 do
-    if [[ -f /mnt/NAS/connected ]]
+    if [[ -f /mnt/NAS/.connected ]]
     then
         notify-send "NAS" "Disk mounted"
         exit

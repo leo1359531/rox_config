@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+mn=0
+
+if [[ -f /mnt/NAS/.connected ]]
+then
+    mn=1
+fi
+
+if [[ $1 = -t ]]
+then 
+    if [[ $mn -eq 1 ]]
+    then 
+        NAS-unmount
+    else
+        NAS-mount
+    fi
+fi
+
+if [[ $mn -eq 1 ]]
+then 
+    echo ''
+else
+    echo ' '
+fi
+
+
+

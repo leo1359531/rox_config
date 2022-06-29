@@ -1,9 +1,10 @@
 # !/bin/bash
 
-wall_best="/home/leo/Pictures/Wallpapers/lap.jpg"
+wall_sega="/home/leo/Pictures/Wallpapers/lap.jpg"
+wall_anime="/home/leo/Pictures/Wallpapers/ign_duaAnime.png"
 wall_safe="/home/leo/Pictures/Wallpapers/zibaldone/1476143569879.jpg"
 
 killall swaybg
 sleep 0.1
 
-swaybg -m fill -i $wall_best
+swaybg -m fill -i $wall_anime

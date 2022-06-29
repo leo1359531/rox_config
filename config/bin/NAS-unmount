@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ -f /mnt/NAS/connected ]]
+if [[ -f /mnt/NAS/.connected ]]
 then 
     sudo umount /mnt/NAS
 else
@@ -11,7 +11,7 @@ i=0
 
 while [[ $i -lt 10 ]]
 do
-    if [[ -f /mnt/NAS/connected ]]
+    if [[ -f /mnt/NAS/.connected ]]
     then
         i=$(( "$i" + 1 ))
         sleep 1

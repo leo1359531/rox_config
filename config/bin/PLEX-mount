@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ -f /mnt/PLEX/.connected ]]
+then 
+    notify-send "PLEX" "Disk already mounted"
+    exit 0
+else
+    sudo mount -t cifs //192.168.1.5/PLEX -o user=leo,pass=mary,uid=leo,gid=users /mnt/PLEX/
+fi
+
+
+i=0
+
+while [[ $i -lt 10 ]]
+do
+    if [[ -f /mnt/PLEX/.connected ]]
+    then
+        notify-send "PLEX" "Disk mounted"
+        exit
+    else
+        i=$(( i + 1 ))
+        sleep 1
+    fi
+done
+
+notify-send "PLEX" "Error! Disk not mounted"

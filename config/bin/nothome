@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+notify-send "Disabling homevpn"
+sleep 1
+
+if sudo wg show | grep -q "peer";
+then
+    if sudo wg-quick down rox;
+    then
+        notify-send "Bye"
+    else
+        notify-send "Error disabling homevpn"
+    fi
+else
+    notify-send "Already not connected"
+fi

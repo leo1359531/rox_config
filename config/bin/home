@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+notify-send "Enabling homevpn"
+sleep 1
+
+if ! sudo wg show | grep -q "peer";
+then
+    if sudo wg-quick up rox;
+    then
+        notify-send "Welcome home"
+    else
+        notify-send "Error enabling homevpn"
+    fi
+else
+    notify-send "Already connected"
+fi
