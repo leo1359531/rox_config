@@ -39,7 +39,7 @@ Make some binaries does not require password on order to work
 ```
 sudo visudo
 ```
-append `leo ALL=(ALL) NOPASSWD: /bin/reboot, /bin/poweroff, /sbin/nmcli, /sbin/pacman` to the end of the file, press `:x` to save and exit
+append `leo ALL=(ALL) NOPASSWD: /bin/reboot, /bin/poweroff, /sbin/nmcli, /sbin/pacman, /sbin/mount, /sbin/umount` to the end of the file, press `:x` to save and exit
 
 Enjoy!
 
