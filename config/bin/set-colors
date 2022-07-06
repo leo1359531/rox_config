@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+color_file="/home/leo/.config/colors"
+folder="/home/leo/.config"
+
+main='#f49fcd'
+text='#fcfff4'
+back='#282a36'
+back_t='rgba(40,44,52,0.9)'
+red='#cf616a'
+green='#a3ee8c'
+grey='#acc0ce'
+nine='#999999'
+blue='#8be9fd'
+
+
+declare -a cl
+declare -a old_cl
+
+cl=($main $text $back $back_t $red $green $grey $nine $blue)
+
+
+i=0
+while read -r line;
+do
+    old_cl[$i]=$line
+    ((i++))
+done <$color_file    
+
+
+# waybar
+waybar='/home/leo/.config/waybar/style.css'
+#waybar='/home/leo/.config/waybar/try.css'
+sway='/home/leo/.config/sway/config'
+rofi='/home/leo/.config/rofi/theme.rasi'
+swaylock='/home/leo/.config/swaylock/config'
+
+declare -a progs
+
+progs=($waybar $sway $rofi $swaylock)
+#progs=($waybar)
+
+
+for prog in "${progs[@]}"
+do
+    i=0
+    for color in "${cl[@]}"
+    do
+        sed -i -e "s/${old_cl[$i]}/${cl[$i]}/g" $prog
+        ((i++))
+    done
+done
+
+mv $color_file $folder/colors_old
+
+for color in "${cl[@]}"
+do
+    echo $color >> $color_file
+done

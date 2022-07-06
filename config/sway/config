@@ -19,13 +19,14 @@ gaps outer 0
 # colors
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #c48fcd #eceff4 #c48fcd   #c48fcd
-client.focused_inactive #333333 #acc0ce #eceff4 #acc0ce   #acc0ce
+client.focused          #4c7899 #f49fcd #fcfff4 #f49fcd   #f49fcd
+client.focused_inactive #333333 #acc0ce #fcfff4 #acc0ce   #acc0ce
 client.unfocused        #333333 #282a36 #999999 #282a36   #282a36
 
 # keyboard layout
 input * {
-	xkb_layout "it"
+    tap enabled
+        xkb_layout "it"
 }
 
 # focus doesn't follow mouse pointer
@@ -45,7 +46,7 @@ set $term kitty
 # Your preferred terminal browser
 set $browser firefox
 # Your preferred terminal filemanager
-set $filemanager ranger
+set $filemanager nautilus
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -68,13 +69,19 @@ exec set-wallpaper
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaymsg exit \
-          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          timeout 300 'swaylock -f' \
+          timeout 330 'swaymsg "output * dpms off" &&  kb-light-off' \
+          resume 'swaymsg "output * dpms on" && kb-light-on' \
+          timeout 7200 'sudo poweroff' \
           before-sleep 'swaymsg exit'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+bindsym $mod+o exec swaymsg "output * dpms off" && kb-light-off
+bindsym $mod+p exec swaymsg "output * dpms on" && kb-light-on
+bindsym $mod+m exec swaylock -f
 
 ### Input configuration
 #
@@ -96,6 +103,7 @@ exec set-wallpaper
 #
 # Start a terminal
 bindsym $mod+Return exec $term
+bindsym $mod+t exec $term
 
 # Start a browser
 bindsym $mod+c exec $browser
@@ -132,6 +140,8 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+bindsym $mod+a focus left
+bindsym $mod+d focus right
 
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
@@ -153,6 +163,8 @@ bindsym $mod+Shift+space floating toggle
 # switch to next or previous workspace
 bindsym $mod+Mod1+Left workspace prev
 bindsym $mod+Mod1+Right workspace next
+bindsym Alt+A workspace prev
+bindsym ALt+D workspace next
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -244,6 +256,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d amdgpu_bl0 s
 bindsym XF86AudioMute        exec --no-startup-id pamixer -t
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMicMute    exec --no-startup-id pamixer --source "alsa_input.pci-0000_03_00.6.HiFi__hw_acp__source" -t
 
 #
 # Status Bar:

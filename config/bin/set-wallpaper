@@ -2,9 +2,10 @@
 
 wall_sega="/home/leo/Pictures/Wallpapers/lap.jpg"
 wall_anime="/home/leo/Pictures/Wallpapers/ign_duaAnime.png"
+wall_neon="/home/leo/Pictures/Wallpapers/neon.png"
 wall_safe="/home/leo/Pictures/Wallpapers/zibaldone/1476143569879.jpg"
 
 killall swaybg
 sleep 0.1
 
-swaybg -m fill -i $wall_anime
+swaybg -m fill -i $wall_neon

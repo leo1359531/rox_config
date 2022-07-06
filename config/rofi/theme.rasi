@@ -2,13 +2,13 @@ window {
   /*width:            30%;
 height:           25%;*/
   padding:          1;
-  text-color:       #bd93f9;
-  background-color: #c48fcd;
+  text-color:       #f49fcd;
+  background-color: #f49fcd;
 }
 
 prompt {
   padding:          4;
-  text-color:       #f8f8f2;
+  text-color:       #fcfff4;
   background-color: #282c34;
 }
 
@@ -22,7 +22,7 @@ inputbar {
 children: 		  [ prompt, entry ];
 padding:          10;
 border:           0 0 1;
-text-color:       #c1c1c1;
+text-color:       #fcfff4;
 background-color: #282c34;
 border-color:     #282c34;
 }
@@ -43,7 +43,7 @@ background-color: #282c34;
 
 element {
   padding:          4;
-  text-color:       #A3DE8C;
+  text-color:       #a3ee8c;
   background-color: #282c34;
 }
 
@@ -59,27 +59,27 @@ element-text {
 }
 
 element normal.urgent, element alternate.urgent {
-  text-color:       #c1c1c1;
+  text-color:       #fcfff4;
   background-color: #282c34;
 }
 
 element normal.active, element alternate.active {
-  text-color:       #c1c1c1;
+  text-color:       #fcfff4;
   background-color: #282c34;
 }
 
 element selected {
   text-color:       #282c34;
-  background-color: #c48fcd;
+  background-color: #f49fcd;
 }
 
 element selected.urgent {
-  text-color:       #212121;
+  text-color:       #282c34;
   background-color: #282c34;
 }
 
 element selected.active {
-  text-color:       #c1c1c1;
+  text-color:       #fcfff4;
   background-color: #282c34;
 }
 // vim:ft=css
